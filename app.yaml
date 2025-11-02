@@ -3,6 +3,14 @@ kind: Deployment
 metadata:
   name: hello-world
 spec:
+  project: default
+      source:
+        repoURL: https://github.com/RedSysTech/test1.git
+        targetRevision: HEAD
+        path: https://github.com/RedSysTech/test1 # This must be a directory
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
   replicas: 1
   selector:
     matchLabels:
